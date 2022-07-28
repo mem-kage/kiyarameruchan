@@ -1,31 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Card from './components/Card';
-import CreateDiary from './components/CreateDiary';
-import SearchBox from './components/SearchBox';
-import { Diary } from './model';
+import KiyarameruChanPath from '../public/kiyarameru.png';
 
 const App: React.VFC = () => {
-  const [search, setSearch] = useState<string>('');
-  const [diaries, setDiaries] = useState<Diary[]>([]);
-  const [searchResults, setSearchResults] = useState<Diary[]>([]);
 
   return(
     <Container>
-      <Title>日記</Title>
-      <SearchBox search={search} setSearch={setSearch} searchResults={searchResults} setSearchResults={setSearchResults} diaries={diaries}></SearchBox>
-      <CreateDiary setSearchResults={setSearchResults} diaries={diaries} setDiaries={setDiaries}></CreateDiary>
-      <Cards>
-        {searchResults?.length ? (
-          searchResults.map((item, index) => (
-            <Card item={item} key={index}></Card>
-          ))
-        ) : (
-          diaries.map((item, index) => (
-            <Card item={item} key={index}></Card>
-          ))
-        )}
-      </Cards>
+      <Title>きやらめるちゃん</Title>
+      <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
     </Container>
   )
 }
@@ -33,23 +15,16 @@ const App: React.VFC = () => {
 export default App;
 
 const Container = styled.div`
-  color: whitesmoke;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 `
 
 const Title = styled.h1`
   text-align: center;
+  color: #ffba4a;
 `
 
-const Cards = styled.div`
-  width: 96%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  &::after {
-    display: block;
-    width: 32%;
-    content:"";
-  }
+const KiyarameruChan = styled.img`
+  width: 80%;
 `
