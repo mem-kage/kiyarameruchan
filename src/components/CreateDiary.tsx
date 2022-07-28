@@ -15,7 +15,7 @@ const CreateDiary: React.VFC<Props> = ({diaries, setDiaries, setSearchResults}: 
     let today = new Date();
     let diaryId = today.getTime();
     let createTime = today.getFullYear() + "/" + today.getMonth() + "/" + today.getDay();
-    setDiaries([...diaries, { id: diaryId, img: `${process.env.PUBLIC_URL}/miku.jpeg`, title: "test", text: diaryText, createTime: createTime}])
+    setDiaries([...diaries, { id: diaryId, img: `${process.env.PUBLIC_URL}/kiyarameru.png`, title: "test", text: diaryText, createTime: createTime}])
     e.target[0].value = null
     setSearchResults([])
   }
