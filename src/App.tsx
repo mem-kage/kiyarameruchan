@@ -1,13 +1,37 @@
+import { Box, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
-import KiyarameruChanPath from '../public/kiyarameru.png';
 
 const App: React.VFC = () => {
+  const [value, setValue] = React.useState(0);
+  console.log(value)
+  const ChangeEl = () => {
+    if (value === 0) {
+      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+    } else if(value === 1) {
+      return <p>1</p>
+    } else {
+      return <p>2</p>
+    }
+  }
 
   return(
     <Container>
       <Title>きやらめるちゃん</Title>
-      <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+      <ChangeEl />
+      <Box>
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <BottomNavigationAction label="ほーむ" />
+          <BottomNavigationAction label="じゃんけん" />
+          <BottomNavigationAction label="しんだん" />
+        </BottomNavigation>
+      </Box>
     </Container>
   )
 }
