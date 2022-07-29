@@ -78,6 +78,7 @@ const Container = styled.div`
 const Title = styled.h1`
   text-align: center;
   color: #ffba4a;
+  margin-top: 0;
 `
 
 const KiyarameruChan = styled.img`
