@@ -1,4 +1,7 @@
 import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@material-ui/core';
+import HomeIcon from '@mui/icons-material/Home';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,7 +10,25 @@ const useStyles = makeStyles({
     position: 'fixed',
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+
+    "& div": {
+      backgroundColor: "#ffbb00"
+    },
+
+    "& .MuiButtonBase-root": {
+      fontWeight: "bold",
+      color: "white",
+    },
+
+    "& .Mui-selected": {
+      backgroundColor: "#ffd883",
+      color: "#ff7a00"
+    },
+
+    "& .MuiBottomNavigationAction-label": {
+      fontSize: "1rem"
+    }
   },
 });
 
@@ -37,9 +58,9 @@ const App: React.VFC = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="ほーむ" />
-          <BottomNavigationAction label="じゃんけん" />
-          <BottomNavigationAction label="しんだん" />
+          <BottomNavigationAction label="ほーむ" icon={<HomeIcon />} />
+          <BottomNavigationAction label="じゃんけん" icon={<LocalDiningIcon />} />
+          <BottomNavigationAction label="しんだん" icon={<ContentPasteSearchIcon />} />
         </BottomNavigation>
       </Box>
     </Container>
