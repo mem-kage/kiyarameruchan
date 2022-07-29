@@ -1,10 +1,20 @@
-import { Box, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
+const useStyles = makeStyles({
+  root: {
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0
+  },
+});
+
 const App: React.VFC = () => {
   const [value, setValue] = React.useState(0);
-  console.log(value)
+  const classes = useStyles();
+
   const ChangeEl = () => {
     if (value === 0) {
       return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
@@ -19,7 +29,7 @@ const App: React.VFC = () => {
     <Container>
       <Title>きやらめるちゃん</Title>
       <ChangeEl />
-      <Box>
+      <Box className={classes.root}>
         <BottomNavigation
           showLabels
           value={value}
