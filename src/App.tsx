@@ -4,6 +4,7 @@ import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import React from 'react';
 import styled from 'styled-components';
+import Shindan from './components/Shindan';
 
 const useStyles = makeStyles({
   root: {
@@ -42,7 +43,7 @@ const App: React.VFC = () => {
     } else if(value === 1) {
       return <p>1</p>
     } else {
-      return <p>2</p>
+      return <Shindan></Shindan>
     }
   }
 
