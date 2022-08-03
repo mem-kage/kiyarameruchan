@@ -1,36 +1,58 @@
 import React from "react";
+import ShindanBtn from "./parts/ShindanBtn";
+import CommonTitle from "./parts/CommonTitle";
 import styled from "styled-components";
-import ShindanSearchBox from "./ShindanSearchBox";
 
 const Shindan: React.VFC = () => {
-  const [target, setTarget] = React.useState("");
   const [shindanFlg, setShindanFlg] = React.useState(false);
 
-  const Test = () => {
-    if (shindanFlg) {
-      console.log(1234)
-      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
-    } else {
-      return <p>teteetete</p>
-    }
-  }
-
-  const changeFlg = () => {
-    setShindanFlg(false)
-  }
-
-  return(
+  return (
     <>
-      {shindanFlg === false ?
-        <ShindanSearchBox target={target} setTarget={setTarget} setShindanFlg={setShindanFlg}></ShindanSearchBox>:
-        <button onClick={changeFlg} >もう一度診断</button>
-      }
+      {shindanFlg === false ? (
+        <>
+          <CommonTitle>{`きやらめるポーズを伝授！`}</CommonTitle>
+          <FlexItem>
+            <p>あなたにピッタリなポーズを伝授しちゃうめる。</p>
+            <ItemImg>
+              <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+            </ItemImg>
+          </FlexItem>
+          <ShindanBtn
+            shindanFlg={shindanFlg}
+            setShindanFlg={setShindanFlg}
+            btnTxt={"お願いします"}
+          />
+        </>
+      ) : (
+        <>
+          <FlexItem>
+              <p>ポーズ使えや</p>
+              <ItemImg>
+                <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+              </ItemImg>
+          </FlexItem>
+          <ShindanBtn
+            shindanFlg={shindanFlg}
+            setShindanFlg={setShindanFlg}
+            btnTxt={"もう一度お願いします"}
+          />
+        </>
+      )}
     </>
-  )
-}
+  );
+};
+
+const FlexItem = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const KiyarameruChan = styled.img`
-  width: 80%;
+  max-width: 100%;
+`
+
+const ItemImg = styled.div`
+  width: 70%;
 `
 
 export default Shindan;

@@ -41,15 +41,14 @@ const App: React.VFC = () => {
     if (value === 0) {
       return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
     } else if(value === 1) {
-      return <p>1</p>
-    } else {
       return <Shindan></Shindan>
+    } else {
+      return <p>1</p>
     }
   }
 
   return(
     <Container>
-      <Title>きやらめるちゃん</Title>
       <ChangeEl />
       <Box className={classes.root}>
         <BottomNavigation
@@ -60,8 +59,8 @@ const App: React.VFC = () => {
           }}
         >
           <BottomNavigationAction label="ほーむ" icon={<HomeIcon />} />
-          <BottomNavigationAction label="じゃんけん" icon={<LocalDiningIcon />} />
           <BottomNavigationAction label="しんだん" icon={<ContentPasteSearchIcon />} />
+          <BottomNavigationAction label="うらない" icon={<LocalDiningIcon />} />
         </BottomNavigation>
       </Box>
     </Container>
@@ -74,12 +73,6 @@ const Container = styled.div`
   max-width: 700px;
   margin: auto;
   text-align: center;
-`
-
-const Title = styled.h1`
-  text-align: center;
-  color: #ffba4a;
-  margin-top: 0;
 `
 
 const KiyarameruChan = styled.img`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ShindanBtn from "./ShindanBtn";
 
 interface Props {
   target: string;
@@ -9,9 +10,7 @@ interface Props {
 
 const ShindanSearchBox: React.VFC<Props> = ({target, setTarget, setShindanFlg}: Props) => {
 
-  const enterShindanBtn = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(e.target)
+  const clickShindanBtn = () => {
     setShindanFlg(true);
   }
 
@@ -20,14 +19,11 @@ const ShindanSearchBox: React.VFC<Props> = ({target, setTarget, setShindanFlg}: 
   }
 
   return(
-    <StyledSearchBox onSubmit={(e) => enterShindanBtn(e)}>
-      <input placeholder="search keyword" value={target} onChange={(e) => handleChange(e)} />
-      <input type="submit" value="submit" />
-    </StyledSearchBox>
+    <input placeholder="search keyword" value={target} onChange={(e) => handleChange(e)} />
   )
 }
 
-const StyledSearchBox = styled.form`
+const StyledSearchBox = styled.div`
   &&& input {
     width: 100%;
     border: unset;
