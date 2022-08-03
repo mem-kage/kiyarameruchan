@@ -14,7 +14,7 @@ const Shindan: React.VFC<Props> = ({shindanFlg, setShindanFlg}: Props) => {
 
   return(
     <>
-      <button onClick={changeFlg} >もう一度診断</button>
+      <button onClick={changeFlg} >qaaaa</button>
     </>
   )
 }

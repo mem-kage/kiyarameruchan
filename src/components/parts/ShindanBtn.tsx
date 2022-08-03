@@ -4,17 +4,33 @@ import styled from "styled-components";
 interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
+  btnTxt: String;
 }
 
 
-const ShindanBtn: React.VFC<Props> = ({shindanFlg, setShindanFlg}: Props) => {
+const ShindanBtn: React.VFC<Props> = ({shindanFlg, setShindanFlg, btnTxt}: Props) => {
   const changeFlg = () => {
-    setShindanFlg(false)
+    console.log(shindanFlg)
+    setShindanFlg(!shindanFlg)
   }
 
   return(
-    <button onClick={changeFlg} >もう一度診断</button>
+    <Btn onClick={changeFlg} >{btnTxt}</Btn>
   )
 }
+
+const Btn = styled.button`
+  width: 80%;
+  border: unset;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px;
+  cursor: pointer;
+
+  :active {
+    background-color: red;
+  }
+`
+
 
 export default ShindanBtn;
