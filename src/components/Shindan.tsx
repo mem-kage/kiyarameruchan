@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ShindanResult from "./ShindanResult";
 import ShindanSearchBox from "./ShindanSearchBox";
 
 const Shindan: React.VFC = () => {
@@ -15,15 +16,11 @@ const Shindan: React.VFC = () => {
     }
   }
 
-  const changeFlg = () => {
-    setShindanFlg(false)
-  }
-
   return(
     <>
       {shindanFlg === false ?
         <ShindanSearchBox target={target} setTarget={setTarget} setShindanFlg={setShindanFlg}></ShindanSearchBox>:
-        <button onClick={changeFlg} >もう一度診断</button>
+        <ShindanResult shindanFlg={shindanFlg} setShindanFlg={setShindanFlg}></ShindanResult>
       }
     </>
   )
