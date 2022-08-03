@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import ShindanBefore from "./before";
 import ShindanResult from "./result";
 

@@ -10,7 +10,7 @@ interface Props {
 const ShindanResult: React.VFC<Props> = ({ shindanFlg, setShindanFlg }: Props) => {
 
   return (
-    <>
+    <div>
       <FlexItem>
         <p>ポーズ使えや</p>
         <ItemImg>
@@ -24,7 +24,7 @@ const ShindanResult: React.VFC<Props> = ({ shindanFlg, setShindanFlg }: Props) =
         setShindanFlg={setShindanFlg}
         btnTxt={"もう一度お願いします"}
       />
-    </>
+    </div>
   );
 };
 

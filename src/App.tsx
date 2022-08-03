@@ -73,8 +73,27 @@ const Container = styled.div`
   max-width: 700px;
   margin: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
 `
 
 const KiyarameruChan = styled.img`
   width: 80%;
+  animation: mocchiri 3s infinite;
+  @keyframes mocchiri {
+    0% {
+        transform: scale(1, 0.8);
+    }
+    20% {
+        transform: scale(0.8, 1.1);
+    }
+    95% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 0.8);
+    }
+  }
 `
