@@ -18,7 +18,7 @@ const ShindanBefore: React.VFC<Props> = ({
       <Text>あなたにピッタリなポーズを伝授しちゃうめる。</Text>
       <ImgBox>
         <KiyarameruChan
-          src={`${process.env.PUBLIC_URL}/kiyarameru.png`}
+          src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
         ></KiyarameruChan>
       </ImgBox>
       <ShindanBtn
@@ -37,13 +37,13 @@ const ShindanTitle = styled.h1`
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  font-size: 34px;
 `;
 
 const KiyarameruChan = styled.img`
-  max-width: 100%;
+  max-width: 300px;
   animation: mocchiri 3s infinite;
   @keyframes mocchiri {
     0% {
