@@ -39,7 +39,7 @@ const App: React.VFC = () => {
 
   const ChangeEl = () => {
     if (value === 0) {
-      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}></KiyarameruChan>
     } else if(value === 1) {
       return <Shindan></Shindan>
     } else {
@@ -80,7 +80,7 @@ const Container = styled.div`
 `
 
 const KiyarameruChan = styled.img`
-  width: 80%;
+  width: 90%;
   animation: mocchiri 3s infinite;
   @keyframes mocchiri {
     0% {
