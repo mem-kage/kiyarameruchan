@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import CommonTitle from "../parts/CommonTitle";
 import ShindanBtn from "../parts/ShindanBtn";
+import KCShindanTtl from "../../images/shindan/kc_sindan_ttl.svg"
 
 interface Props {
   shindanFlg: boolean;
@@ -14,15 +14,13 @@ const ShindanBefore: React.VFC<Props> = ({
 }: Props) => {
   return (
     <div>
-      <CommonTitle>{`きやらめるポーズを伝授！`}</CommonTitle>
-      <FlexItem>
-        <p>あなたにピッタリなポーズを伝授しちゃうめる。</p>
-        <ItemImg>
-          <KiyarameruChan
-            src={`${process.env.PUBLIC_URL}/kiyarameru.png`}
-          ></KiyarameruChan>
-        </ItemImg>
-      </FlexItem>
+      <ShindanTitle>きやらめるポーズを<br />伝授！</ShindanTitle>
+      <Text>あなたにピッタリなポーズを伝授しちゃうめる。</Text>
+      <ImgBox>
+        <KiyarameruChan
+          src={`${process.env.PUBLIC_URL}/kiyarameru.png`}
+        ></KiyarameruChan>
+      </ImgBox>
       <ShindanBtn
         shindanFlg={shindanFlg}
         setShindanFlg={setShindanFlg}
@@ -32,9 +30,16 @@ const ShindanBefore: React.VFC<Props> = ({
   );
 };
 
-const FlexItem = styled.div`
-  display: flex;
-  align-items: center;
+const ShindanTitle = styled.h1`
+  font-size: 24px;
+  color: white;
+  background-image: url(${process.env.PUBLIC_URL}/images/sindan/kc_sindan_ttl.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-size: 40px;
 `;
 
 const KiyarameruChan = styled.img`
@@ -56,8 +61,15 @@ const KiyarameruChan = styled.img`
   }
 `;
 
-const ItemImg = styled.div`
-  width: 70%;
+const ImgBox = styled.div`
+  width: 90%;
+  margin: auto;
+`;
+
+const Text = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 `;
 
 export default ShindanBefore;
