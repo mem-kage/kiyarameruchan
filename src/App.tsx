@@ -12,9 +12,18 @@ const useStyles = makeStyles({
     bottom: 0,
     left: 0,
     right: 0,
+    // backgroundImage: `url(${process.env.PUBLIC_URL}/images/kc_bottom_bg_01.svg)`,
+    // backgroundRepeat: "no-repeat",
+
+    "& .MuiBottomNavigation-root": {
+      backgroundColor: "unset",
+      paddingTop: "60px",
+    },
 
     "& div": {
-      backgroundColor: "#ffbb00"
+      backgroundImage: `url(${process.env.PUBLIC_URL}/images/kc_bottom_bg.svg)`,
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
     },
 
     "& .MuiButtonBase-root": {
@@ -23,7 +32,7 @@ const useStyles = makeStyles({
     },
 
     "& .Mui-selected": {
-      backgroundColor: "#ffd883",
+      backgroundColor: "unset",
       color: "#ff7a00"
     },
 
