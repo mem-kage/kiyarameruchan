@@ -17,18 +17,29 @@ const useStyles = makeStyles({
 
     "& .MuiBottomNavigation-root": {
       backgroundColor: "unset",
-      paddingTop: "60px",
     },
 
     "& div": {
       backgroundImage: `url(${process.env.PUBLIC_URL}/images/kc_bottom_bg.svg)`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      backgroundRepeat: "repeat",
     },
 
     "& .MuiButtonBase-root": {
       fontWeight: "bold",
       color: "white",
+      position: "relative",
+      paddingBottom: 0,
+
+      '&::before': {
+        background: `url(${process.env.PUBLIC_URL}/kiyarameru.svg) no-repeat`,
+        content: '""',
+        backgroundSize: "contain",
+        width: "70px",
+        height: "50px",
+        position: "absolute",
+        top: "-15px"
+      },
     },
 
     "& .Mui-selected": {
@@ -67,9 +78,9 @@ const App: React.VFC = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="ほーむ" icon={<HomeIcon />} />
-          <BottomNavigationAction label="しんだん" icon={<ContentPasteSearchIcon />} />
-          <BottomNavigationAction label="うらない" icon={<LocalDiningIcon />} />
+          <BottomNavigationAction label="ほーむ" />
+          <BottomNavigationAction label="しんだん" />
+          <BottomNavigationAction label="うらない" />
         </BottomNavigation>
       </Box>
     </Container>
