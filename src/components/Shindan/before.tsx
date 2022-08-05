@@ -14,7 +14,7 @@ const ShindanBefore: React.VFC<Props> = ({
 }: Props) => {
   return (
     <div>
-      <ShindanTitle>きやらめるポーズを<br />伝授！</ShindanTitle>
+      <ShindanTitle><span>きやらめるポーズを<br />伝授！</span></ShindanTitle>
       <Text>あなたにピッタリなポーズを伝授しちゃうめる。</Text>
       <ImgBox>
         <KiyarameruChan
@@ -31,15 +31,19 @@ const ShindanBefore: React.VFC<Props> = ({
 };
 
 const ShindanTitle = styled.h1`
-  font-size: 24px;
   color: white;
   background-image: url(${process.env.PUBLIC_URL}/images/sindan/kc_sindan_ttl.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
   padding-top: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   font-size: 34px;
+  margin: 0;
+
+  @media screen and (max-width: 750px) {
+    font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
+  }
 `;
 
 const KiyarameruChan = styled.img`
@@ -63,13 +67,18 @@ const KiyarameruChan = styled.img`
 
 const ImgBox = styled.div`
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
 `;
 
 const Text = styled.p`
   font-size: 24px;
   font-weight: bold;
   color: white;
+
+  @media screen and (max-width: 750px) {
+    margin: calc(0.6875rem + ((1vw - 3.75px) * 2.9333)) 0;
+    font-size: calc(0.875rem + ((1vw - 3.75px) * 3.7333));
+  }
 `;
 
 export default ShindanBefore;

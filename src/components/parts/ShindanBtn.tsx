@@ -26,9 +26,16 @@ const Btn = styled.button`
   border-radius: 30px;
   padding: 10px;
   cursor: pointer;
+  color: #D77824;
+  font-weight: bold;
+  font-size: 20px;
 
   :active {
     background-color: red;
+  }
+
+  @media screen and (max-width: 750px) {
+    font-size: calc(1rem + ((1vw - 3.75px) * 4.2667));
   }
 `
 
