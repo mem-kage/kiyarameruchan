@@ -101,7 +101,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 93vh;
+  height: calc(100vh - 56px);
 `
 
 const KiyarameruChan = styled.img`
