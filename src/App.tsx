@@ -27,9 +27,9 @@ const useStyles = makeStyles({
 
     "& .MuiButtonBase-root": {
       fontWeight: "bold",
-      color: "white",
+      color: "#C8A07E",
       position: "relative",
-      paddingBottom: 0,
+      alignItems: "end",
 
       '&::before': {
         background: `url(${process.env.PUBLIC_URL}/kiyarameru.svg) no-repeat`,
@@ -44,7 +44,12 @@ const useStyles = makeStyles({
 
     "& .Mui-selected": {
       backgroundColor: "unset",
-      color: "#ff7a00"
+      color: "#BC6F2B"
+    },
+
+    "&": {
+      backgroundColor: "unset",
+      color: "#BC6F2B"
     },
 
     "& .MuiBottomNavigationAction-label": {
