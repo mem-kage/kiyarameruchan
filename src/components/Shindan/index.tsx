@@ -7,14 +7,18 @@ const Shindan: React.VFC = () => {
   const [shindanFlg, setShindanFlg] = React.useState(false);
 
   return (
-    <>
+    <Container>
       {shindanFlg === false ? (
         <ShindanBefore shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} />
       ) : (
         <ShindanResult shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} />
       )}
-    </>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  width: 95%;
+`;
 
 export default Shindan;
