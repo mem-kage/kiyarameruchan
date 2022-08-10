@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Loading from "../Loading";
 
 const Uranai: React.VFC = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const shuffleList = ([...array]) => {
     console.log(array)
@@ -15,6 +17,7 @@ const Uranai: React.VFC = () => {
   const clickCard = (item: any) => {
     item["isSelected"] = !item["isSelected"]
     alert(`your select card is number ${item["index"]}`)
+    setIsLoading(!isLoading)
   }
 
   let initList = []
@@ -24,14 +27,18 @@ const Uranai: React.VFC = () => {
   const randomNumberList = shuffleList(initList);
 
   return (
-    <Container>
-      {randomNumberList.map((item,key) => {
-        return (
-          // eslint-disable-next-line jsx-a11y/alt-text
-          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} /></p>
-        )
-      })}
-    </Container>
+    <>
+      { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} /> :
+        <Container>
+          {randomNumberList.map((item,key) => {
+            return (
+              // eslint-disable-next-line jsx-a11y/alt-text
+              <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} /></p>
+            )
+          })}
+        </Container>
+      }
+    </>
   );
 };
 
