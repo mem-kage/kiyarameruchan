@@ -2,6 +2,7 @@ import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@mate
 import React from 'react';
 import styled from 'styled-components';
 import Shindan from './components/Shindan';
+import Uranai from './components/Uranai';
 import './App.css';
 
 const useStyles = makeStyles({
@@ -71,7 +72,7 @@ const App: React.VFC = () => {
     } else if(value === 1) {
       return <Shindan></Shindan>
     } else {
-      return <p>1</p>
+      return <Uranai></Uranai>
     }
   }
 
