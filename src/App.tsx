@@ -1,10 +1,8 @@
 import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@material-ui/core';
-import HomeIcon from '@mui/icons-material/Home';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
-import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import React from 'react';
 import styled from 'styled-components';
 import Shindan from './components/Shindan';
+import './App.css';
 
 const useStyles = makeStyles({
   root: {
@@ -12,19 +10,44 @@ const useStyles = makeStyles({
     bottom: 0,
     left: 0,
     right: 0,
+    // backgroundImage: `url(${process.env.PUBLIC_URL}/images/kc_bottom_bg_01.svg)`,
+    // backgroundRepeat: "no-repeat",
+
+    "& .MuiBottomNavigation-root": {
+      backgroundColor: "unset",
+    },
 
     "& div": {
-      backgroundColor: "#ffbb00"
+      backgroundImage: `url(${process.env.PUBLIC_URL}/images/kc_bottom_bg.svg)`,
+      backgroundSize: "contain",
+      backgroundRepeat: "repeat",
     },
 
     "& .MuiButtonBase-root": {
       fontWeight: "bold",
-      color: "white",
+      color: "#C8A07E",
+      position: "relative",
+      alignItems: "end",
+
+      '&::before': {
+        background: `url(${process.env.PUBLIC_URL}/kiyarameru.svg) no-repeat`,
+        content: '""',
+        backgroundSize: "contain",
+        width: "70px",
+        height: "50px",
+        position: "absolute",
+        top: "-15px"
+      },
     },
 
     "& .Mui-selected": {
-      backgroundColor: "#ffd883",
-      color: "#ff7a00"
+      backgroundColor: "unset",
+      color: "#BC6F2B"
+    },
+
+    "&": {
+      backgroundColor: "unset",
+      color: "#BC6F2B"
     },
 
     "& .MuiBottomNavigationAction-label": {
@@ -35,11 +58,16 @@ const useStyles = makeStyles({
 
 const App: React.VFC = () => {
   const [value, setValue] = React.useState(0);
+  const [animationFlg, setAnimationFlg] = React.useState(false);
   const classes = useStyles();
 
   const ChangeEl = () => {
     if (value === 0) {
-      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.png`}></KiyarameruChan>
+      return <KiyarameruChan
+                onClick={() => {setAnimationFlg(!animationFlg)}}
+                src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
+                className={animationFlg ? "biyooon" : "mocchiri"}
+              ></KiyarameruChan>
     } else if(value === 1) {
       return <Shindan></Shindan>
     } else {
@@ -58,9 +86,9 @@ const App: React.VFC = () => {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="ほーむ" icon={<HomeIcon />} />
-          <BottomNavigationAction label="しんだん" icon={<ContentPasteSearchIcon />} />
-          <BottomNavigationAction label="うらない" icon={<LocalDiningIcon />} />
+          <BottomNavigationAction label="ほーむ" />
+          <BottomNavigationAction label="しんだん" />
+          <BottomNavigationAction label="うらない" />
         </BottomNavigation>
       </Box>
     </Container>
@@ -73,8 +101,12 @@ const Container = styled.div`
   max-width: 700px;
   margin: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 56px);
 `
 
 const KiyarameruChan = styled.img`
-  width: 80%;
+  width: 90%;
 `

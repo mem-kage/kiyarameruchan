@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: #ffd883;
+    background-image: url(${process.env.PUBLIC_URL}/images/kc_bg.svg);
   }
 `
 
