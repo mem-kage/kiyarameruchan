@@ -1,10 +1,8 @@
 import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@material-ui/core';
-import HomeIcon from '@mui/icons-material/Home';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
-import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import React from 'react';
 import styled from 'styled-components';
 import Shindan from './components/Shindan';
+import './App.css';
 
 const useStyles = makeStyles({
   root: {
@@ -60,11 +58,16 @@ const useStyles = makeStyles({
 
 const App: React.VFC = () => {
   const [value, setValue] = React.useState(0);
+  const [animationFlg, setAnimationFlg] = React.useState(false);
   const classes = useStyles();
 
   const ChangeEl = () => {
     if (value === 0) {
-      return <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}></KiyarameruChan>
+      return <KiyarameruChan
+                onClick={() => {setAnimationFlg(!animationFlg)}}
+                src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
+                className={animationFlg ? "biyooon" : "mocchiri"}
+              ></KiyarameruChan>
     } else if(value === 1) {
       return <Shindan></Shindan>
     } else {
@@ -106,19 +109,4 @@ const Container = styled.div`
 
 const KiyarameruChan = styled.img`
   width: 90%;
-  animation: mocchiri 3s infinite;
-  @keyframes mocchiri {
-    0% {
-        transform: scale(1, 0.8);
-    }
-    20% {
-        transform: scale(0.8, 1.1);
-    }
-    95% {
-        transform: scale(1, 1);
-    }
-    100% {
-        transform: scale(1, 0.8);
-    }
-  }
 `
