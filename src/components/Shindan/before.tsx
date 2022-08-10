@@ -14,7 +14,7 @@ const ShindanBefore: React.VFC<Props> = ({
 }: Props) => {
   return (
     <div>
-      <ShindanTitle><span>きやらめるポーズを<br />伝授！</span></ShindanTitle>
+      <ShindanTitle><span>きやらめるポーズ</span><span>を伝授！</span></ShindanTitle>
       <Text>あなたにピッタリなポーズを伝授しちゃうめる。</Text>
       <ImgBox>
         <KiyarameruChan
@@ -43,6 +43,10 @@ const ShindanTitle = styled.h1`
 
   @media screen and (max-width: 750px) {
     font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
+  }
+
+  span {
+    display: block;
   }
 `;
 
