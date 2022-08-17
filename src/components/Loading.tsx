@@ -15,14 +15,17 @@ const Loading: React.VFC<Props> = ({
     console.log("open loading page");
     setTimeout(() => {
       setIsLoading(!isLoading)
-    }, 5000)
+    }, 3000)
   })
 
   return (
     <>
     <LoadingWrap>
-      <LoadingTxt>ロード中</LoadingTxt>
-      <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} className={"mocchiri"} />
+      <LoadingBg />
+      <LoadingItem>
+        <LoadingTxt>ロード中</LoadingTxt>
+        <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} className={"mocchiri"} />
+      </LoadingItem>
     </LoadingWrap>
 
     </>
@@ -32,16 +35,37 @@ const Loading: React.VFC<Props> = ({
 const LoadingWrap = styled.div`
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   z-index: 100;
-  background-color: rgba(100,100,100,0.6);
+  /* background-color: rgba(100,100,100,0.6); */
+`;
+
+const LoadingBg = styled.div`
+  background-color: #ffe397;
+  border-radius: 50%;
+  height: 200vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200vw;
+`;
+
+const LoadingItem = styled.div`
+  height: 100%;
 
   p,img {
     position: relative;
     top: 30%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
   }
 `;
+
 
 const LoadingTxt = styled.p`
   font-weight: bold;
@@ -49,7 +73,9 @@ const LoadingTxt = styled.p`
 `;
 
 const KiyarameruChan = styled.img`
-  width: 60%;
+  @media screen and (max-width: 750px) {
+    width: 60%;
+  }
 `
 
 export default Loading;
