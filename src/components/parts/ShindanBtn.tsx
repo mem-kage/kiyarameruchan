@@ -5,13 +5,18 @@ interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
   btnTxt: String;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 }
 
 
-const ShindanBtn: React.VFC<Props> = ({shindanFlg, setShindanFlg, btnTxt}: Props) => {
+const ShindanBtn: React.VFC<Props> = ({shindanFlg, setShindanFlg, btnTxt, setIsLoading}: Props) => {
   const changeFlg = () => {
     console.log(shindanFlg)
     setShindanFlg(!shindanFlg)
+
+    if (setIsLoading !== undefined) {
+      setIsLoading(true)
+    }
   }
 
   return(
@@ -32,7 +37,8 @@ const Btn = styled.button`
   position: relative;
 
   :active {
-    background-color: red;
+    background-color: #D77824;
+    color: white;
   }
 
   :after {

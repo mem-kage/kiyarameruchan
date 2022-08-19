@@ -4,11 +4,13 @@ import styled from "styled-components";
 interface Props {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  loadingTxt: string;
 }
 
 const Loading: React.VFC<Props> = ({
   isLoading,
   setIsLoading,
+  loadingTxt
 }: Props) => {
 
   useEffect(() => {
@@ -23,7 +25,7 @@ const Loading: React.VFC<Props> = ({
     <LoadingWrap>
       <LoadingBg />
       <LoadingItem>
-        <LoadingTxt>ロード中</LoadingTxt>
+        <LoadingTxt>{loadingTxt}</LoadingTxt>
         <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} className={"mocchiri"} />
       </LoadingItem>
     </LoadingWrap>
@@ -35,6 +37,7 @@ const Loading: React.VFC<Props> = ({
 const LoadingWrap = styled.div`
   position: fixed;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: 100;

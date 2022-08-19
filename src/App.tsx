@@ -80,7 +80,7 @@ const App: React.VFC = () => {
 
   return(
     <>
-    { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} /> :
+    { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"ロード中"} /> :
       <Container>
         <ChangeEl />
         <Box className={classes.root}>

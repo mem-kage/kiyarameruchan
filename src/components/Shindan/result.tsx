@@ -5,49 +5,39 @@ import ShindanBtn from "../parts/ShindanBtn";
 interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ShindanBefore: React.VFC<Props> = ({
+const ShindanResult: React.VFC<Props> = ({
   shindanFlg,
   setShindanFlg,
+  setIsLoading
 }: Props) => {
+  const randamNumber = Math.floor(Math.random() * 10) + 1;
+  const imgUrl = "/kiyarameru"+ randamNumber +".png";
+  console.log(randamNumber)
+  // useLayoutEffect(() => {
+
+  // });
+
   return (
     <div>
-      <ShindanTitle><span>きやらめるポーズ</span><span>を伝授したメル！</span></ShindanTitle>
-      <Text>ポーズ使ってメルよ〜</Text>
+      <h3>あなたの今日のきやらめるポーズはこれで決まり。いってらっしゃい</h3>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
         ></KiyarameruChan>
+        <p>{`${process.env.PUBLIC_URL}${imgUrl}`}</p>
       </ImgBox>
       <ShindanBtn
         shindanFlg={shindanFlg}
         setShindanFlg={setShindanFlg}
-        btnTxt={"ありがとうメル"}
+        btnTxt={"もう一度診断する"}
+        setIsLoading={setIsLoading}
       />
     </div>
   );
 };
-
-const ShindanTitle = styled.h1`
-  color: white;
-  background-image: url(${process.env.PUBLIC_URL}/images/sindan/kc_sindan_ttl.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: center;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  font-size: 34px;
-  margin: 0;
-
-  @media screen and (max-width: 750px) {
-    font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
-  }
-
-  span {
-    display: block;
-  }
-`;
 
 const KiyarameruChan = styled.img`
   max-width: 300px;
@@ -84,4 +74,4 @@ const Text = styled.p`
   }
 `;
 
-export default ShindanBefore;
+export default ShindanResult;
