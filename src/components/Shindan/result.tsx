@@ -8,18 +8,26 @@ interface Props {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ShindanBefore: React.VFC<Props> = ({
+const ShindanResult: React.VFC<Props> = ({
   shindanFlg,
   setShindanFlg,
   setIsLoading
 }: Props) => {
+  const randamNumber = Math.floor(Math.random() * 10) + 1;
+  const imgUrl = "/kiyarameru"+ randamNumber +".png";
+  console.log(randamNumber)
+  // useLayoutEffect(() => {
+
+  // });
 
   return (
     <div>
+      <h3>あなたの今日のきやらめるポーズはこれで決まり。いってらっしゃい</h3>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
         ></KiyarameruChan>
+        <p>{`${process.env.PUBLIC_URL}${imgUrl}`}</p>
       </ImgBox>
       <ShindanBtn
         shindanFlg={shindanFlg}
@@ -66,4 +74,4 @@ const Text = styled.p`
   }
 `;
 
-export default ShindanBefore;
+export default ShindanResult;
