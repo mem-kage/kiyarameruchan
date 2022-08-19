@@ -15,8 +15,8 @@ const Uranai: React.VFC = () => {
         <UranaiBefore uranaiFlg={uranaiFlg} setUranaiFlg={setUranaiFlg} setSelectedNumber={setSelectedNumber} />
       ) : (
         <>
-        { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"占い中める"} /> :
-          <UranaiResult selectedNumber={selectedNumber}  />
+        { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"占い中める・・・"} /> :
+          <UranaiResult uranaiFlg={uranaiFlg} setUranaiFlg={setUranaiFlg} setIsLoading={setIsLoading} selectedNumber={selectedNumber}  />
         }
         </>
       )}

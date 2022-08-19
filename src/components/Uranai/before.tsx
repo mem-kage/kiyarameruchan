@@ -25,8 +25,6 @@ const UranaiBefore: React.VFC<Props> = ({
 
   const clickCard = (item: any) => {
     item["isSelected"] = !item["isSelected"]
-    alert(`your select card is number ${item["index"]}`)
-    console.log(item["index"])
     setSelectedNumber(item["index"])
     setUranaiFlg(!uranaiFlg)
   }
@@ -42,7 +40,7 @@ const UranaiBefore: React.VFC<Props> = ({
       {randomNumberList.map((item,key) => {
         return (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} /></p>
+          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} />{item["index"]}</p>
         )
       })}
     </Container>

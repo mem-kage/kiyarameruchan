@@ -15,7 +15,7 @@ const Shindan: React.VFC = () => {
         <ShindanBefore shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} />
       ) : (
         <>
-        { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"診断中める"} /> :
+        { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"診断中める・・・"} /> :
           <ShindanResult shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} setIsLoading={setIsLoading} />
         }
         </>
