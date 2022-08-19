@@ -5,16 +5,17 @@ import ShindanBtn from "../parts/ShindanBtn";
 interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ShindanBefore: React.VFC<Props> = ({
   shindanFlg,
   setShindanFlg,
+  setIsLoading
 }: Props) => {
+
   return (
     <div>
-      <ShindanTitle><span>きやらめるポーズ</span><span>を伝授したメル！</span></ShindanTitle>
-      <Text>ポーズ使ってメルよ〜</Text>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
@@ -23,31 +24,12 @@ const ShindanBefore: React.VFC<Props> = ({
       <ShindanBtn
         shindanFlg={shindanFlg}
         setShindanFlg={setShindanFlg}
-        btnTxt={"ありがとうメル"}
+        btnTxt={"もう一度診断する"}
+        setIsLoading={setIsLoading}
       />
     </div>
   );
 };
-
-const ShindanTitle = styled.h1`
-  color: white;
-  background-image: url(${process.env.PUBLIC_URL}/images/sindan/kc_sindan_ttl.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: center;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  font-size: 34px;
-  margin: 0;
-
-  @media screen and (max-width: 750px) {
-    font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
-  }
-
-  span {
-    display: block;
-  }
-`;
 
 const KiyarameruChan = styled.img`
   max-width: 300px;

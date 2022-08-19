@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import ShindanBtn from "../parts/ShindanBtn";
-import KCShindanTtl from "../../images/shindan/kc_sindan_ttl.svg"
 
 interface Props {
   shindanFlg: boolean;
@@ -10,7 +9,7 @@ interface Props {
 
 const ShindanBefore: React.VFC<Props> = ({
   shindanFlg,
-  setShindanFlg,
+  setShindanFlg
 }: Props) => {
   return (
     <div>
@@ -25,7 +24,7 @@ const ShindanBefore: React.VFC<Props> = ({
         shindanFlg={shindanFlg}
         setShindanFlg={setShindanFlg}
         btnTxt={"お願いします"}
-      />
+        setIsLoading={undefined} />
     </div>
   );
 };

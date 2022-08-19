@@ -28,7 +28,7 @@ const Uranai: React.VFC = () => {
 
   return (
     <>
-      { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} /> :
+      { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"占い中める"} /> :
         <Container>
           {randomNumberList.map((item,key) => {
             return (
