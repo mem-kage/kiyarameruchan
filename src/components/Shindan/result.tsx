@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ShindanBtn from "../parts/ShindanBtn";
+import ShindanBtn from "../parts/CommonBtn";
 
 interface Props {
   shindanFlg: boolean;
@@ -30,8 +30,8 @@ const ShindanResult: React.VFC<Props> = ({
         <p>{`${process.env.PUBLIC_URL}${imgUrl}`}</p>
       </ImgBox>
       <ShindanBtn
-        shindanFlg={shindanFlg}
-        setShindanFlg={setShindanFlg}
+        status={shindanFlg}
+        setStatus={setShindanFlg}
         btnTxt={"もう一度診断する"}
         setIsLoading={setIsLoading}
       />

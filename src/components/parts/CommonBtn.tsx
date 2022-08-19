@@ -2,17 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  shindanFlg: boolean;
-  setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
+  status: boolean;
+  setStatus: React.Dispatch<React.SetStateAction<boolean>>;
   btnTxt: String;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>> | undefined;
 }
 
-
-const ShindanBtn: React.VFC<Props> = ({shindanFlg, setShindanFlg, btnTxt, setIsLoading}: Props) => {
+const CommonBtn: React.VFC<Props> = ({status, setStatus, btnTxt, setIsLoading}: Props) => {
   const changeFlg = () => {
-    console.log(shindanFlg)
-    setShindanFlg(!shindanFlg)
+    setStatus(!status)
 
     if (setIsLoading !== undefined) {
       setIsLoading(true)
@@ -60,4 +58,4 @@ const Btn = styled.button`
 `
 
 
-export default ShindanBtn;
+export default CommonBtn;
