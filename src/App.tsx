@@ -1,9 +1,10 @@
 import { Box, BottomNavigation, BottomNavigationAction, makeStyles } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Shindan from './components/Shindan';
 import Uranai from './components/Uranai';
 import './App.css';
+import Loading from './components/Loading';
 
 const useStyles = makeStyles({
   root: {
@@ -60,6 +61,7 @@ const useStyles = makeStyles({
 const App: React.VFC = () => {
   const [value, setValue] = React.useState(0);
   const [animationFlg, setAnimationFlg] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const classes = useStyles();
 
   const ChangeEl = () => {
@@ -77,22 +79,26 @@ const App: React.VFC = () => {
   }
 
   return(
-    <Container>
-      <ChangeEl />
-      <Box className={classes.root}>
-        <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        >
-          <BottomNavigationAction label="ほーむ" />
-          <BottomNavigationAction label="しんだん" />
-          <BottomNavigationAction label="うらない" />
-        </BottomNavigation>
-      </Box>
-    </Container>
+    <>
+    { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} /> :
+      <Container>
+        <ChangeEl />
+        <Box className={classes.root}>
+          <BottomNavigation
+            showLabels
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+          >
+            <BottomNavigationAction label="ほーむ" />
+            <BottomNavigationAction label="しんだん" />
+            <BottomNavigationAction label="うらない" />
+          </BottomNavigation>
+        </Box>
+      </Container>
+    }
+    </>
   )
 }
 
