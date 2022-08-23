@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ShindanBtn from "../parts/ShindanBtn";
+import ShindanBtn from "../parts/CommonBtn";
 
 interface Props {
   shindanFlg: boolean;
@@ -21,8 +21,8 @@ const ShindanBefore: React.VFC<Props> = ({
         ></KiyarameruChan>
       </ImgBox>
       <ShindanBtn
-        shindanFlg={shindanFlg}
-        setShindanFlg={setShindanFlg}
+        status={shindanFlg}
+        setStatus={setShindanFlg}
         btnTxt={"お願いします"}
         setIsLoading={undefined} />
     </div>
