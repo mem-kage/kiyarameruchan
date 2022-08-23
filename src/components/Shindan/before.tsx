@@ -36,11 +36,12 @@ const ShindanTitle = styled.h1`
   background-size: contain;
   background-position-x: center;
   padding-top: 10px;
-  padding-bottom: 30px;
-  font-size: 34px;
+  padding-bottom: 40px;
+  font-size: 45px;
   margin: 0;
 
   @media screen and (max-width: 750px) {
+    padding-bottom: 30px;
     font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
   }
 
