@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import kc from '../assets/images/kiyarameru.gif'
 
 interface Props {
   isLoading: boolean;
@@ -26,7 +27,7 @@ const Loading: React.VFC<Props> = ({
       <LoadingBg />
       <LoadingItem>
         <LoadingTxt>{loadingTxt}</LoadingTxt>
-        <KiyarameruChan src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} className={"mocchiri"} />
+        <img className="load-img" src={kc} alt="きやらめるちゃんローディング" />
       </LoadingItem>
     </LoadingWrap>
 
