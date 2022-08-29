@@ -7,7 +7,6 @@ import ShindanResult from "./result";
 const Shindan: React.VFC = () => {
   const [shindanFlg, setShindanFlg] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
-  console.log(isLoading,shindanFlg)
 
   return (
     <Container>

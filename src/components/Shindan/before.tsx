@@ -13,6 +13,7 @@ const ShindanBefore: React.VFC<Props> = ({
 }: Props) => {
   return (
     <div>
+      <h1><span>きやらめるポーズ</span><span>を伝授！</span></h1>
       <ShindanTitle><span>きやらめるポーズ</span><span>を伝授！</span></ShindanTitle>
       <Text>あなたにピッタリなポーズを伝授しちゃうめる。</Text>
       <ImgBox>
