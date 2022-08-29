@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import CommonTxt from './parts/CommonTxt';
+import kcTTL from '../assets/images/images/kc_top_ttl.svg'
 
 interface Props {
   setValue: React.Dispatch<React.SetStateAction<number>>;
@@ -10,7 +11,9 @@ const Top: React.VFC<Props> = ({setValue}) => {
   return(
     <>
       <div className='top-area'>
-        <h1 className='top-area__ttl'><span>きやらめるちゃんと</span><span>遊ぼっっ！</span></h1>
+        <h1 className='top-area__ttl'>
+          <img src={kcTTL} alt="きやらめるちゃんTTL" />
+        </h1>
         <CommonTxt>きやらめるちゃんとゲームができるよ！<br />したのボタンを選択してね♪</CommonTxt>
         <img
         src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
