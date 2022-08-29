@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/kiyarameruchan/static/css/main.0c472e1a.css",
-    "main.js": "/kiyarameruchan/static/js/main.2360fa0d.js",
+    "main.css": "/kiyarameruchan/static/css/main.7caa7f1c.css",
+    "main.js": "/kiyarameruchan/static/js/main.c7f72aa0.js",
     "static/js/787.31691847.chunk.js": "/kiyarameruchan/static/js/787.31691847.chunk.js",
+    "static/media/kc_sindan_ttl.svg": "/kiyarameruchan/static/media/kc_sindan_ttl.395d315c5f4581cb29c5.svg",
     "index.html": "/kiyarameruchan/index.html",
-    "main.0c472e1a.css.map": "/kiyarameruchan/static/css/main.0c472e1a.css.map",
-    "main.2360fa0d.js.map": "/kiyarameruchan/static/js/main.2360fa0d.js.map",
+    "main.7caa7f1c.css.map": "/kiyarameruchan/static/css/main.7caa7f1c.css.map",
+    "main.c7f72aa0.js.map": "/kiyarameruchan/static/js/main.c7f72aa0.js.map",
     "787.31691847.chunk.js.map": "/kiyarameruchan/static/js/787.31691847.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c472e1a.css",
-    "static/js/main.2360fa0d.js"
+    "static/css/main.7caa7f1c.css",
+    "static/js/main.c7f72aa0.js"
   ]
 }
