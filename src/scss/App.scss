@@ -1,0 +1,82 @@
+.biyooon {
+  animation: biyooon 4s infinite;
+}
+
+@keyframes biyooon {
+  0% {
+      transform: scale(1, 0.8);
+  }
+  /* 20% {
+      transform: scale(1, 1);
+  }
+  45% {
+      transform: scale(1, 1.15);
+  } */
+  40% {
+      transform: scale(0.6, 1.8);
+  }
+  70% {
+      transform: scale(1.9, 0.8);
+  }
+  100% {
+      transform: scale(1, 0.8);
+  }
+}
+
+.mocchiri {
+  animation: mocchiri 3s infinite;
+}
+
+@keyframes mocchiri {
+  0% {
+      transform: scale(1, 0.8);
+  }
+  20% {
+      transform: scale(0.8, 1.1);
+  }
+  95% {
+      transform: scale(1, 1);
+  }
+  100% {
+      transform: scale(1, 0.8);
+  }
+
+}
+
+.container {
+  max-width: 700px;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.top-area {
+  &__ttl {
+    color: white;
+    background-image: url(../assets/images/images/kc_sindan_ttl.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    font-size: 45px;
+    margin: 0;
+    text-align: center;
+
+    @media screen and (max-width: 750px) {
+      padding-bottom: 30px;
+      font-size: calc(1.75rem + ((1vw - 3.75px) * 5.8667));
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 90%;
+  }
+}
