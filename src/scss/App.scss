@@ -42,3 +42,33 @@
   }
 
 }
+
+.container {
+  max-width: 700px;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.top-area {
+  &__img {
+    width: 50%;
+    margin: auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__ttl {
+    width: 70%;
+    margin: auto;
+  }
+
+  &__btn-wrap {
+    margin-top: 20px;
+  }
+}
