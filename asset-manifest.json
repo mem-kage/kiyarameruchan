@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kiyarameruchan/static/css/main.7caa7f1c.css",
-    "main.js": "/kiyarameruchan/static/js/main.c7f72aa0.js",
+    "main.css": "/kiyarameruchan/static/css/main.fc5a0221.css",
+    "main.js": "/kiyarameruchan/static/js/main.86415b5f.js",
     "static/js/787.31691847.chunk.js": "/kiyarameruchan/static/js/787.31691847.chunk.js",
-    "static/media/kc_sindan_ttl.svg": "/kiyarameruchan/static/media/kc_sindan_ttl.395d315c5f4581cb29c5.svg",
+    "static/media/kc_top_ttl.svg": "/kiyarameruchan/static/media/kc_top_ttl.7e7ed8569e031ac640a79267e660c1e0.svg",
     "index.html": "/kiyarameruchan/index.html",
-    "main.7caa7f1c.css.map": "/kiyarameruchan/static/css/main.7caa7f1c.css.map",
-    "main.c7f72aa0.js.map": "/kiyarameruchan/static/js/main.c7f72aa0.js.map",
+    "main.fc5a0221.css.map": "/kiyarameruchan/static/css/main.fc5a0221.css.map",
+    "main.86415b5f.js.map": "/kiyarameruchan/static/js/main.86415b5f.js.map",
     "787.31691847.chunk.js.map": "/kiyarameruchan/static/js/787.31691847.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7caa7f1c.css",
-    "static/js/main.c7f72aa0.js"
+    "static/css/main.fc5a0221.css",
+    "static/js/main.86415b5f.js"
   ]
 }
