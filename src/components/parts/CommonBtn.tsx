@@ -19,7 +19,7 @@ const CommonBtn: React.VFC<Props> = ({status, setStatus, btnTxt, setIsLoading}: 
   }
 
   return(
-    <button onClick={changeFlg} >{btnTxt}</button>
+    <button className="common-btn" onClick={changeFlg} >{btnTxt}</button>
   )
 }
 
