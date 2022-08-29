@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/kiyarameruchan/static/css/main.fc5a0221.css",
-    "main.js": "/kiyarameruchan/static/js/main.86415b5f.js",
+    "main.js": "/kiyarameruchan/static/js/main.fec9fd1a.js",
     "static/js/787.31691847.chunk.js": "/kiyarameruchan/static/js/787.31691847.chunk.js",
-    "static/media/kc_top_ttl.svg": "/kiyarameruchan/static/media/kc_top_ttl.7e7ed8569e031ac640a79267e660c1e0.svg",
+    "static/media/kc_top_ttl.svg": "/kiyarameruchan/static/media/kc_top_ttl.34ea8067409eb4479f9232d6a50e2f7c.svg",
     "index.html": "/kiyarameruchan/index.html",
     "main.fc5a0221.css.map": "/kiyarameruchan/static/css/main.fc5a0221.css.map",
-    "main.86415b5f.js.map": "/kiyarameruchan/static/js/main.86415b5f.js.map",
+    "main.fec9fd1a.js.map": "/kiyarameruchan/static/js/main.fec9fd1a.js.map",
     "787.31691847.chunk.js.map": "/kiyarameruchan/static/js/787.31691847.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc5a0221.css",
-    "static/js/main.86415b5f.js"
+    "static/js/main.fec9fd1a.js"
   ]
 }
