@@ -23,7 +23,7 @@ const CommonBtn: React.VFC<Props> = ({status, setStatus, btnTxt, setIsLoading}: 
 }
 
 const Btn = styled.button`
-  width: 80%;
+  width: 35%;
   border: unset;
   background-color: white;
   border-radius: 15px;
@@ -53,6 +53,7 @@ const Btn = styled.button`
   }
 
   @media screen and (max-width: 750px) {
+    width: 80%;
     font-size: calc(1rem + ((1vw - 3.75px) * 4.2667));
   }
 `
