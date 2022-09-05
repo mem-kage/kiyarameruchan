@@ -13,8 +13,8 @@ const ShindanResult: React.VFC<Props> = ({
   setShindanFlg,
   setIsLoading
 }: Props) => {
-  const randamNumber = Math.floor(Math.random() * 10) + 1;
-  const imgUrl = "/kiyarameru"+ randamNumber +".png";
+  const randamNumber = Math.floor(Math.random() * 3) + 1;
+  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ randamNumber +".svg";
   console.log(randamNumber)
   // useLayoutEffect(() => {
 
@@ -22,12 +22,11 @@ const ShindanResult: React.VFC<Props> = ({
 
   return (
     <div>
-      <h3>あなたの今日のきやらめるポーズはこれで決まり。いってらっしゃい</h3>
+      <h3>ダミー</h3>
       <ImgBox>
         <KiyarameruChan
-          src={`${process.env.PUBLIC_URL}/kiyarameru.svg`}
+          src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
-        <p>{`${process.env.PUBLIC_URL}${imgUrl}`}</p>
       </ImgBox>
       <ShindanBtn
         status={shindanFlg}
@@ -41,7 +40,7 @@ const ShindanResult: React.VFC<Props> = ({
 
 const KiyarameruChan = styled.img`
   max-width: 300px;
-  animation: mocchiri 3s infinite;
+  /* animation: mocchiri 3s infinite;
   @keyframes mocchiri {
     0% {
         transform: scale(1, 0.8);
@@ -55,7 +54,7 @@ const KiyarameruChan = styled.img`
     100% {
         transform: scale(1, 0.8);
     }
-  }
+  } */
 `;
 
 const ImgBox = styled.div`
