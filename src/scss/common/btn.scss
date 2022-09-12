@@ -16,6 +16,11 @@
   &:active {
     background-color: #D77824;
     color: white;
+
+    a {
+      background-color: #D77824;
+      color: white;
+    }
   }
 
   &:after {
@@ -34,5 +39,11 @@
   @media screen and (max-width: 750px) {
     width: 80%;
     font-size: calc(1rem + ((1vw - 3.75px) * 4.2667));
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #D77824;
   }
 }

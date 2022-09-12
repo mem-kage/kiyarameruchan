@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ShindanBtn from "../parts/CommonBtn";
+import SaveAlt from '@material-ui/icons/SaveAlt';
+
 
 interface Props {
   shindanFlg: boolean;
@@ -13,21 +15,19 @@ const ShindanResult: React.VFC<Props> = ({
   setShindanFlg,
   setIsLoading
 }: Props) => {
-  const randamNumber = Math.floor(Math.random() * 3) + 1;
-  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ randamNumber +".svg";
-  console.log(randamNumber)
-  // useLayoutEffect(() => {
-
-  // });
+  const randamNumber = Math.floor(Math.random() * 3);
+  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".svg";
+  const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手"]
 
   return (
     <div>
-      <h3>ダミー</h3>
+      <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
+      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download="saved.png">画像ダウンロード<SaveAlt /></a></button>
       <ShindanBtn
         status={shindanFlg}
         setStatus={setShindanFlg}
