@@ -27,13 +27,20 @@ const ShindanResult: React.VFC<Props> = ({
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download="saved.png">画像ダウンロード<SaveAlt /></a></button>
+      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download="kc_kawaii.svg">画像ダウンロード<SaveAlt /></a></button>
       <ShindanBtn
         status={shindanFlg}
         setStatus={setShindanFlg}
         btnTxt={"もう一度診断する"}
         setIsLoading={setIsLoading}
       />
+
+      <div className="flex-items">
+        <ul>
+          <li>Topに戻る</li>
+          <li>もう一度</li>
+        </ul>
+      </div>
     </div>
   );
 };
