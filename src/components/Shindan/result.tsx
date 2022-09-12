@@ -28,7 +28,6 @@ const ShindanResult: React.VFC<Props> = ({
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download={imgFileName}>画像ダウンロード<SaveAlt /></a></button>
       <ShindanBtn
         status={shindanFlg}
         setStatus={setShindanFlg}
