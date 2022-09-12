@@ -16,8 +16,9 @@ const ShindanResult: React.VFC<Props> = ({
   setIsLoading
 }: Props) => {
   const randamNumber = Math.floor(Math.random() * 3);
-  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".svg";
+  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
   const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手"]
+  const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
 
   return (
     <div>
@@ -27,7 +28,7 @@ const ShindanResult: React.VFC<Props> = ({
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download="kc_kawaii.svg">画像ダウンロード<SaveAlt /></a></button>
+      <button className="common-btn" > <a href={`${process.env.PUBLIC_URL}${imgUrl}`} download={imgFileName}>画像ダウンロード<SaveAlt /></a></button>
       <ShindanBtn
         status={shindanFlg}
         setStatus={setShindanFlg}
@@ -35,12 +36,10 @@ const ShindanResult: React.VFC<Props> = ({
         setIsLoading={setIsLoading}
       />
 
-      <div className="flex-items">
-        <ul>
-          <li>Topに戻る</li>
-          <li>もう一度</li>
-        </ul>
-      </div>
+      <ul className="flex-items">
+        <li>Topに戻る</li>
+        <li>もう一度</li>
+      </ul>
     </div>
   );
 };
