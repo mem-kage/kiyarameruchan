@@ -25,7 +25,7 @@ const Uranai: React.VFC = () => {
 };
 
 const Container = styled.div`
-  width: 95%;
+  width: 100%;
 `;
 
 export default Uranai;

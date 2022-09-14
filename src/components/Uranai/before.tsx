@@ -47,7 +47,7 @@ const UranaiBefore: React.VFC<Props> = ({
 };
 
 const Container = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
