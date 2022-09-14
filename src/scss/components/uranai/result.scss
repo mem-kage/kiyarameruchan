@@ -1,3 +1,12 @@
-.uranai-result-wrapper {
-  width: 95%;
+.uranai-result {
+  position: absolute;
+  top: 46%;
+  left: 46%;
+  transform: translate(-46%, -50%);
+  -webkit-transform: translate(-46%, -50%);
+  -ms-transform: translate(-46%, -50%);
+
+  > p {
+    margin-top: 0;
+  }
 }
