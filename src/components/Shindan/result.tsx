@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import ShindanBtn from "../parts/CommonBtn";
-import SaveAlt from '@material-ui/icons/SaveAlt';
-
+import ShindanTxtBtn from "../parts/CommonTxtBtn";
+import ShindanTopBtn from "../parts/CommonTopBtn";
+import ShindanTxt from "../parts/CommonTxt";
 
 interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const ShindanResult: React.VFC<Props> = ({
   shindanFlg,
   setShindanFlg,
-  setIsLoading
+  setIsLoading,
+  setValue
 }: Props) => {
   const randamNumber = Math.floor(Math.random() * 3);
   const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
@@ -28,16 +30,21 @@ const ShindanResult: React.VFC<Props> = ({
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-      <ShindanBtn
-        status={shindanFlg}
-        setStatus={setShindanFlg}
-        btnTxt={"もう一度診断する"}
-        setIsLoading={setIsLoading}
-      />
+
+      <ShindanTxt>画像は好きに保存していいめる！</ShindanTxt>
 
       <ul className="flex-items">
-        <li>Topに戻る</li>
-        <li>もう一度</li>
+        <ShindanTopBtn
+          btnTxt={"Topへ"}
+          setIsLoading={setIsLoading}
+          setValue={setValue}
+        />
+        <ShindanTxtBtn
+          status={shindanFlg}
+          setStatus={setShindanFlg}
+          btnTxt={"もう一度"}
+          setIsLoading={setIsLoading}
+        />
       </ul>
     </div>
   );

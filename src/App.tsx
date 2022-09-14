@@ -14,7 +14,7 @@ const App: React.VFC = () => {
     if (value === 0) {
       return <Top setValue={setValue}></Top>
     } else if(value === 1) {
-      return <Shindan></Shindan>
+      return <Shindan setValue={setValue}></Shindan>
     } else {
       return <Uranai></Uranai>
     }

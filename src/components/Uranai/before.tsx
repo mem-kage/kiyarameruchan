@@ -15,7 +15,6 @@ const UranaiBefore: React.VFC<Props> = ({
 }: Props) => {
 
   const shuffleList = ([...array]) => {
-    console.log(array)
     for (let i = array.length - 1; i >= 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -30,7 +29,7 @@ const UranaiBefore: React.VFC<Props> = ({
   }
 
   let initList = []
-  for (let i = 1; i <= 9; i++ ){
+  for (let i = 1; i <= 7; i++ ){
     initList.push({"index": i, "isSelected": false})
   }
   const randomNumberList = shuffleList(initList);

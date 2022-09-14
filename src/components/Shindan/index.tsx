@@ -4,7 +4,11 @@ import Loading from "../Loading";
 import ShindanBefore from "./before";
 import ShindanResult from "./result";
 
-const Shindan: React.VFC = () => {
+interface Props {
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Shindan: React.VFC<Props> = ({setValue}) => {
   const [shindanFlg, setShindanFlg] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -15,7 +19,7 @@ const Shindan: React.VFC = () => {
       ) : (
         <>
         { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"診断中める・・・"} /> :
-          <ShindanResult shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} setIsLoading={setIsLoading} />
+          <ShindanResult setValue={setValue} shindanFlg={shindanFlg} setShindanFlg={setShindanFlg} setIsLoading={setIsLoading} />
         }
         </>
       )}
