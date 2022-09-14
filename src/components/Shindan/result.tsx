@@ -1,39 +1,51 @@
 import React from "react";
 import styled from "styled-components";
-import ShindanBtn from "../parts/CommonBtn";
+import ShindanTxtBtn from "../parts/CommonTxtBtn";
+import ShindanTopBtn from "../parts/CommonTopBtn";
+import ShindanTxt from "../parts/CommonTxt";
 
 interface Props {
   shindanFlg: boolean;
   setShindanFlg: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const ShindanResult: React.VFC<Props> = ({
   shindanFlg,
   setShindanFlg,
-  setIsLoading
+  setIsLoading,
+  setValue
 }: Props) => {
-  const randamNumber = Math.floor(Math.random() * 3) + 1;
-  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ randamNumber +".svg";
-  console.log(randamNumber)
-  // useLayoutEffect(() => {
-
-  // });
+  const randamNumber = Math.floor(Math.random() * 3);
+  const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
+  const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手"]
+  const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
 
   return (
     <div>
-      <h3>ダミー</h3>
+      <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-      <ShindanBtn
-        status={shindanFlg}
-        setStatus={setShindanFlg}
-        btnTxt={"もう一度診断する"}
-        setIsLoading={setIsLoading}
-      />
+
+      <ShindanTxt>画像は好きに保存していいめる！</ShindanTxt>
+
+      <ul className="flex-items">
+        <ShindanTopBtn
+          btnTxt={"Topへ"}
+          setIsLoading={setIsLoading}
+          setValue={setValue}
+        />
+        <ShindanTxtBtn
+          status={shindanFlg}
+          setStatus={setShindanFlg}
+          btnTxt={"もう一度"}
+          setIsLoading={setIsLoading}
+        />
+      </ul>
     </div>
   );
 };
