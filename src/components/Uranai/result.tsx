@@ -10,24 +10,64 @@ interface Props {
 }
 
 const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, selectedNumber}) => {
-  const result = ["大吉","中吉","小吉","末吉","凶","大凶","メルメル","きやらめる","筋トレ"]
+  const result = [
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    },
+    {
+      "item": {
+        "result": "マジでやばい！！",
+        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+      }
+    }
+  ]
+  console.log(result[0].item.result)
 
   return (
-    <Container>
+    <div className="uranai-result-wrapper">
       <h3>占い後</h3>
-      <p>{result[selectedNumber-1]}</p>
+      <p>{result[selectedNumber-1].item.result}</p>
       <UranaiBtn
         status={uranaiFlg}
         setStatus={setUranaiFlg}
         btnTxt={"もう一度占うめる"}
         setIsLoading={setIsLoading}
       />
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  width: 95%;
-`;
 
 export default UranaiResult;
