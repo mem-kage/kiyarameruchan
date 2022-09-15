@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import UranaiBtn from "../parts/CommonBtn";
+import UranaiTxtBtn from "../parts/CommonTxtBtn";
+import UranaiTopBtn from "../parts/CommonTopBtn";
 
 interface Props {
   uranaiFlg: boolean;
   setUranaiFlg: React.Dispatch<React.SetStateAction<boolean>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   selectedNumber: number;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, selectedNumber}) => {
+const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, selectedNumber, setValue}) => {
   const result = [
     {
       "item": {
@@ -57,18 +60,31 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
   console.log(result[0].item.result)
 
   return (
-    <Container>
+    <Container className="uranai-result-wrapper">
       <div className="uranai-result">
         <p>{result[selectedNumber-1].item.result}</p>
         <p>{result[selectedNumber-1].item.resultTxt}</p>
       </div>
+      <ul className="flex-items">
+        <UranaiTopBtn
+          btnTxt={"Topへ"}
+          setIsLoading={setIsLoading}
+          setValue={setValue}
+        />
+        <UranaiTxtBtn
+          status={uranaiFlg}
+          setStatus={setUranaiFlg}
+          btnTxt={"もう一度"}
+          setIsLoading={setIsLoading}
+        />
+      </ul>
     </Container>
   );
 };
 
 const Container = styled.div`
   background: url(${process.env.PUBLIC_URL}/images/uranai/kc_uranai_result.svg) center center / contain no-repeat;
-  height: 100vh;
+  height: 80vh;
   position: relative;
 `;
 
