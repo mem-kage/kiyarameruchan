@@ -4,7 +4,11 @@ import Loading from "../Loading";
 import UranaiBefore from "./before";
 import UranaiResult from "./result";
 
-const Uranai: React.VFC = () => {
+interface Props {
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Uranai: React.VFC<Props> = ({setValue}) => {
   const [uranaiFlg, setUranaiFlg] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
   const [selectedNumber, setSelectedNumber] = React.useState<number>(0);
@@ -16,7 +20,7 @@ const Uranai: React.VFC = () => {
       ) : (
         <>
         { isLoading ? <Loading isLoading={isLoading} setIsLoading={setIsLoading} loadingTxt={"占い中める・・・"} /> :
-          <UranaiResult uranaiFlg={uranaiFlg} setUranaiFlg={setUranaiFlg} setIsLoading={setIsLoading} selectedNumber={selectedNumber}  />
+          <UranaiResult setValue={setValue} uranaiFlg={uranaiFlg} setUranaiFlg={setUranaiFlg} setIsLoading={setIsLoading} selectedNumber={selectedNumber}  />
         }
         </>
       )}
@@ -25,7 +29,7 @@ const Uranai: React.VFC = () => {
 };
 
 const Container = styled.div`
-  width: 95%;
+  width: 100%;
 `;
 
 export default Uranai;

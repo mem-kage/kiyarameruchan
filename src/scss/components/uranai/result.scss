@@ -1,0 +1,24 @@
+.uranai-result-wrapper {
+  .flex-items {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+  }
+}
+
+.uranai-result {
+  position: absolute;
+  top: 49%;
+  left: 46%;
+  transform: translate(-46%, -49%);
+  -webkit-transform: translate(-46%, -49%);
+  -ms-transform: translate(-46%, -49%);
+
+  // > p {
+  //   margin-top: 0;
+  // }
+}

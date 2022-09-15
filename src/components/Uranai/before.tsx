@@ -39,7 +39,7 @@ const UranaiBefore: React.VFC<Props> = ({
       {randomNumberList.map((item,key) => {
         return (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/kiyarameru.svg`} />{item["index"]}</p>
+          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/images/uranai/kc_uranai_item_0${key+1}.svg`} />{item["index"]}</p>
         )
       })}
     </Container>
@@ -47,7 +47,7 @@ const UranaiBefore: React.VFC<Props> = ({
 };
 
 const Container = styled.div`
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -55,7 +55,7 @@ const Container = styled.div`
   p {
     width: 25%;
     padding: 20px;
-    background-color: #ffb70f;
+    /* background-color: #ffb70f; */
     border-radius: 30px;
     cursor: pointer;
 
