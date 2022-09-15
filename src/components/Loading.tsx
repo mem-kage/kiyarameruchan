@@ -18,7 +18,7 @@ const Loading: React.VFC<Props> = ({
     console.log("open loading page");
     setTimeout(() => {
       setIsLoading(!isLoading)
-    }, 3000)
+    }, 1500)
   })
 
   return (
