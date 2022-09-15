@@ -1,0 +1,55 @@
+.uranai {
+  .common-title {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.uranai-item {
+  position: relative;
+  height: 70vh;
+
+  img {
+    position: absolute;
+    width: 30%;
+  }
+
+  &__obj {
+    right: 0;
+    width: 40% !important;
+  }
+
+  &__0 {
+    left: 10%;
+    top: 10%;
+  }
+
+  &__1 {
+    left: 35%;
+    top: 30%;
+  }
+
+  &__2 {
+    left: 10%;
+    top: 50%;
+  }
+
+  &__3 {
+    right: 5%;
+    top: 50%;
+  }
+
+  &__4 {
+    top: 65%;
+  }
+
+  &__5 {
+    bottom: 0;
+    left: 4%;
+  }
+
+  &__6 {
+    bottom: 0;
+    right: 4%;
+  }
+}

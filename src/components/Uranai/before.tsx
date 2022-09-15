@@ -35,14 +35,18 @@ const UranaiBefore: React.VFC<Props> = ({
   const randomNumberList = shuffleList(initList);
 
   return (
-    <Container>
-      {randomNumberList.map((item,key) => {
-        return (
-          // eslint-disable-next-line jsx-a11y/alt-text
-          <p onClick={() => clickCard(item)} key={key}><img src={`${process.env.PUBLIC_URL}/images/uranai/kc_uranai_item_0${key+1}.svg`} />{item["index"]}</p>
-        )
-      })}
-    </Container>
+    <div className="uranai">
+      <h1 className="common-title"><p><span>きやらめるちゃん</span><span>うらない</span></p></h1>
+      <Container className="uranai-item">
+        <img className="uranai-item__obj" src={`${process.env.PUBLIC_URL}/images/uranai/kc_uranai_obj.svg`} alt="きやらめるちゃんのすみか"></img>
+        {randomNumberList.map((item,key) => {
+          return (
+            // eslint-disable-next-line jsx-a11y/alt-text
+            <img className={`uranai-item__${key}`} onClick={() => clickCard(item)} key={key} src={`${process.env.PUBLIC_URL}/images/uranai/kc_uranai_item_0${key+1}.svg`} />
+          )
+        })}
+      </Container>
+    </div>
   );
 };
 
@@ -54,7 +58,7 @@ const Container = styled.div`
 
   p {
     width: 25%;
-    padding: 20px;
+    /* padding: 20px; */
     /* background-color: #ffb70f; */
     border-radius: 30px;
     cursor: pointer;
@@ -66,7 +70,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 750px) {
     p {
-      width: 20%;
+      width: 100%;
     }
   }
 `;
