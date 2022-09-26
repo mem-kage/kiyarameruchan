@@ -3,6 +3,7 @@ import styled from "styled-components";
 import UranaiBtn from "../parts/CommonBtn";
 import UranaiTxtBtn from "../parts/CommonTxtBtn";
 import UranaiTopBtn from "../parts/CommonTopBtn";
+import CommonModalBtn from "../parts/CommonModal";
 
 interface Props {
   uranaiFlg: boolean;
@@ -78,6 +79,8 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
           setIsLoading={setIsLoading}
         />
       </ul>
+
+      <CommonModalBtn />
     </Container>
   );
 };
