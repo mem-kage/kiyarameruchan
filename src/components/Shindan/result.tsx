@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ShindanTxtBtn from "../parts/CommonTxtBtn";
 import ShindanTopBtn from "../parts/CommonTopBtn";
 import ShindanTxt from "../parts/CommonTxt";
+import CommonModalBtn from "../parts/CommonModal";
 
 interface Props {
   shindanFlg: boolean;
@@ -17,21 +18,19 @@ const ShindanResult: React.VFC<Props> = ({
   setIsLoading,
   setValue
 }: Props) => {
-  const randamNumber = Math.floor(Math.random() * 3);
+  const randamNumber = Math.floor(Math.random() * 9);
   const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
-  const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手"]
+  const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手","お待たせポーズ","覗き見ポーズ","心ここにあらずポーズ"]
   const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
 
   return (
-    <div>
+    <div className="shindan-result-wrap">
       <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
       <ImgBox>
         <KiyarameruChan
           src={`${process.env.PUBLIC_URL}${imgUrl}`}
         ></KiyarameruChan>
       </ImgBox>
-
-      <ShindanTxt>画像は好きに保存していいめる！</ShindanTxt>
 
       <ul className="flex-items">
         <ShindanTopBtn
@@ -46,6 +45,8 @@ const ShindanResult: React.VFC<Props> = ({
           setIsLoading={setIsLoading}
         />
       </ul>
+
+      <CommonModalBtn />
     </div>
   );
 };
