@@ -27,6 +27,12 @@
   img {
     max-width: 30%;
   }
+
+  @media screen and (max-width: 750px) {
+    img {
+      max-width: 50%;
+    }
+  }
 }
 
 .shindan-result-wrap {
