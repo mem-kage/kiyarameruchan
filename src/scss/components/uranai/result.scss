@@ -8,7 +8,16 @@
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+  }
 
+  .kc-about-btn {
+    position: absolute;
+    bottom: -12%;
+    left: 10%;
+  }
+
+  @media screen and (min-width: 750px) {
+    bottom: -11%;
   }
 }
 
