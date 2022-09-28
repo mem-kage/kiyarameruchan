@@ -18,7 +18,7 @@ const ShindanResult: React.VFC<Props> = ({
   setIsLoading,
   setValue
 }: Props) => {
-  const randamNumber = Math.floor(Math.random() * 9);
+  const randamNumber = Math.floor(Math.random() * 8);
   const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
   const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手","お待たせポーズ","覗き見ポーズ","心ここにあらずポーズ"]
   const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
