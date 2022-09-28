@@ -27,6 +27,9 @@ const CommonModalBtn: React.VFC = () => {
           <div className="modal-item--pc">
             <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_pc.png`} alt=""></img></p>
           </div>
+          <div className="modal-item--sp">
+            <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_sp.png`} alt=""></img></p>
+          </div>
         </div>
       </div>
     </>
