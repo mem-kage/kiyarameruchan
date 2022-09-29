@@ -28,8 +28,17 @@
   transform: translate(-46%, -49%);
   -webkit-transform: translate(-46%, -49%);
   -ms-transform: translate(-46%, -49%);
+  width: 50%;
 
-  // > p {
-  //   margin-top: 0;
-  // }
+  @media screen and (max-width: 600px) {
+    width: 70%;
+  }
+
+  > p {
+   font-size: 20px;
+
+   &:nth-child(1) {
+    font-weight: bold;
+   }
+  }
 }
