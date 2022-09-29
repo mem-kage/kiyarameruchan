@@ -30,9 +30,9 @@
   @media screen and (max-width: 750px) {
     width: 280px;
 
-    svg {
-      left: 15px;
-    }
+    // svg {
+    //   left: 15px;
+    // }
   }
 }
 
@@ -53,4 +53,8 @@
 
 .shindan-result-wrap {
   position: relative;
+
+  .flex-items {
+    width: unset;
+  }
 }
