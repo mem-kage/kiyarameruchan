@@ -4,6 +4,7 @@ import ShindanTxtBtn from "../parts/CommonTxtBtn";
 import ShindanTopBtn from "../parts/CommonTopBtn";
 import ShindanTxt from "../parts/CommonTxt";
 import CommonModalBtn from "../parts/CommonModal";
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 interface Props {
   shindanFlg: boolean;
@@ -33,11 +34,14 @@ const ShindanResult: React.VFC<Props> = ({
       </ImgBox>
 
       <ul className="flex-items">
-        <ShindanTopBtn
-          btnTxt={"Topに戻る"}
-          setIsLoading={setIsLoading}
-          setValue={setValue}
-        />
+        <li>
+          <ArrowLeftIcon fontSize="medium" />
+          <ShindanTopBtn
+            btnTxt={"Topに戻る"}
+            setIsLoading={setIsLoading}
+            setValue={setValue}
+          />
+        </li>
         <ShindanTxtBtn
           status={shindanFlg}
           setStatus={setShindanFlg}
