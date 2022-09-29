@@ -1,5 +1,6 @@
 .uranai-result-wrapper {
   position: relative;
+  top: -30px;
 
   .flex-items {
     position: absolute;
@@ -23,12 +24,20 @@
 
 .uranai-result {
   position: absolute;
-  top: 49%;
+  top: 40%;
   left: 46%;
-  transform: translate(-46%, -49%);
-  -webkit-transform: translate(-46%, -49%);
-  -ms-transform: translate(-46%, -49%);
+  transform: translate(-46%, -40%);
+  -webkit-transform: translate(-46%, -40%);
+  -ms-transform: translate(-46%, -40%);
   width: 50%;
+
+  @media screen and (min-width: 751px) {
+    top: 45%;
+    transform: translate(-46%, -45%);
+    -webkit-transform: translate(-46%, -45%);
+    -ms-transform: translate(-46%, -45%);
+
+  }
 
   @media screen and (max-width: 600px) {
     width: 70%;
