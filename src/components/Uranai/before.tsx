@@ -37,6 +37,7 @@ const UranaiBefore: React.VFC<Props> = ({
   return (
     <div className="uranai">
       <h1 className="common-title"><p><span>きやらめるちゃん</span><span>うらない</span></p></h1>
+      <p>キャラメルを一つ選ぶめる！</p>
       <Container className="uranai-item">
         <img className="uranai-item__obj" src={`${process.env.PUBLIC_URL}/images/uranai/kc_uranai_obj.svg`} alt="きやらめるちゃんのすみか"></img>
         {randomNumberList.map((item,key) => {
