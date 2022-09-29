@@ -4,6 +4,7 @@ import UranaiBtn from "../parts/CommonBtn";
 import UranaiTxtBtn from "../parts/CommonTxtBtn";
 import UranaiTopBtn from "../parts/CommonTopBtn";
 import CommonModalBtn from "../parts/CommonModal";
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 interface Props {
   uranaiFlg: boolean;
@@ -58,7 +59,6 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
       }
     }
   ]
-  console.log(result[0].item.result)
 
   return (
     <Container className="uranai-result-wrapper">
@@ -67,11 +67,14 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
         <p>{result[selectedNumber-1].item.resultTxt}</p>
       </div>
       <ul className="flex-items">
-        <UranaiTopBtn
-          btnTxt={"Topへ"}
-          setIsLoading={setIsLoading}
-          setValue={setValue}
-        />
+        <li>
+          <ArrowLeftIcon fontSize="medium" />
+          <UranaiTopBtn
+            btnTxt={"Topに戻る"}
+            setIsLoading={setIsLoading}
+            setValue={setValue}
+          />
+        </li>
         <UranaiTxtBtn
           status={uranaiFlg}
           setStatus={setUranaiFlg}

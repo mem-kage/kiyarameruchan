@@ -34,7 +34,7 @@ const ShindanResult: React.VFC<Props> = ({
 
       <ul className="flex-items">
         <ShindanTopBtn
-          btnTxt={"Topへ"}
+          btnTxt={"Topに戻る"}
           setIsLoading={setIsLoading}
           setValue={setValue}
         />
