@@ -6,6 +6,7 @@ import ShindanTxt from "../parts/CommonTxt";
 import CommonModalBtn from "../parts/CommonModal";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import SNSBtn from '../parts/CommonSNS';
+import { Helmet } from 'react-helmet';
 
 interface Props {
   shindanFlg: boolean;
@@ -26,37 +27,49 @@ const ShindanResult: React.VFC<Props> = ({
   const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
 
   return (
-    <div className="shindan-result-wrap">
-      <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
-      <ImgBox>
-        <KiyarameruChan
-          src={`${process.env.PUBLIC_URL}${imgUrl}`}
-        ></KiyarameruChan>
-      </ImgBox>
-
-      <ul className="flex-items">
-        <li>
-          <ArrowLeftIcon fontSize="medium" />
-          <ShindanTopBtn
-            btnTxt={"Topに戻る"}
-            setIsLoading={setIsLoading}
-            setValue={setValue}
-          />
-        </li>
-        <ShindanTxtBtn
-          status={shindanFlg}
-          setStatus={setShindanFlg}
-          btnTxt={"もう一度"}
-          setIsLoading={setIsLoading}
-        />
-      </ul>
-
-      <CommonModalBtn />
-      <SNSBtn
-        twURL={"https://mem-kage.github.io/kiyarameruchan/"}
-        title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+    <>
+      <Helmet
+        title={`きやらめるちゃんポーズ結果める！`}
+        meta={[
+            { property: 'og:title', content: titleList[randamNumber] },
+            { property: 'og:type', content: 'website' },
+            { property: 'og:url', content: 'https://mem-kage.github.io/kiyarameruchan/' },
+            { property: 'og:image', content: `${process.env.PUBLIC_URL}${imgUrl}` },
+            { property: 'og:description', content: titleList[randamNumber] },
+        ]}
       />
-    </div>
+      <div className="shindan-result-wrap">
+        <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
+        <ImgBox>
+          <KiyarameruChan
+            src={`${process.env.PUBLIC_URL}${imgUrl}`}
+          ></KiyarameruChan>
+        </ImgBox>
+
+        <ul className="flex-items">
+          <li>
+            <ArrowLeftIcon fontSize="medium" />
+            <ShindanTopBtn
+              btnTxt={"Topに戻る"}
+              setIsLoading={setIsLoading}
+              setValue={setValue}
+            />
+          </li>
+          <ShindanTxtBtn
+            status={shindanFlg}
+            setStatus={setShindanFlg}
+            btnTxt={"もう一度"}
+            setIsLoading={setIsLoading}
+          />
+        </ul>
+
+        <CommonModalBtn />
+        <SNSBtn
+          twURL={"https://mem-kage.github.io/kiyarameruchan/"}
+          title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+        />
+      </div>
+    </>
   );
 };
 
