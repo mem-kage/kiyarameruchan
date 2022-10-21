@@ -5,6 +5,7 @@ import UranaiTxtBtn from "../parts/CommonTxtBtn";
 import UranaiTopBtn from "../parts/CommonTopBtn";
 import CommonModalBtn from "../parts/CommonModal";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import SNSBtn from '../parts/CommonSNS';
 
 interface Props {
   uranaiFlg: boolean;
@@ -84,6 +85,10 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
       </ul>
 
       <CommonModalBtn />
+      <SNSBtn
+        twURL={"https://mem-kage.github.io/kiyarameruchan/"}
+        title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+      />
     </Container>
   );
 };

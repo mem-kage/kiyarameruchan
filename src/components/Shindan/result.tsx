@@ -5,6 +5,7 @@ import ShindanTopBtn from "../parts/CommonTopBtn";
 import ShindanTxt from "../parts/CommonTxt";
 import CommonModalBtn from "../parts/CommonModal";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import SNSBtn from '../parts/CommonSNS';
 
 interface Props {
   shindanFlg: boolean;
@@ -51,6 +52,10 @@ const ShindanResult: React.VFC<Props> = ({
       </ul>
 
       <CommonModalBtn />
+      <SNSBtn
+        twURL={"https://mem-kage.github.io/kiyarameruchan/"}
+        title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+      />
     </div>
   );
 };
