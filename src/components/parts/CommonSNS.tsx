@@ -17,12 +17,11 @@ const CommonSNS: React.VFC<Props> = ({twURL, title}: Props) => {
     <div className="common-sns">
       <TwitterShareButton
         url={twURL}
-        title={title}
       >
         <TwitterIcon size={40} round />
       </TwitterShareButton>
 
-      <LineShareButton url={twURL} title={title} >
+      <LineShareButton url={twURL} >
         <LineIcon size={40} round />
       </LineShareButton>
     </div>
