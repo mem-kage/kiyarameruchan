@@ -14,40 +14,82 @@
     height: 100%;
     width: 100%;
     z-index: 100;
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
 
   &-bg {
-    background-color: #ffe397;
-    height: 100vh;
+    background-color: rgba(25,24,25,0.4);
+    height: 200vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw;
+    width: 200vw;
   }
 
   &-item {
-    height: 100%;
     position: relative;
     z-index: 1000;
+    background-color: #FFF3D3;
+    border: 2px solid #D77824;
+    border-radius: 16px;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     p {
-      width: 80%;
+      width: 100%;
       margin: auto;
-      padding-top: 20px;
+      // padding-top: 20px;
+
+      img {
+        max-width: 90%;
+      }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      right: -13px;
+      top: -13px;
+      text-align: right;
+      padding-top: 0;
+      width: 32px;
+      height: 32px;
 
       img {
         max-width: 100%;
       }
     }
 
-    .modal-close-btn {
-      position: absolute;
-      right: 0;
-      top: 0;
-      text-align: right;
-      padding-top: 0;
+    @media screen and (min-width: 751px) {
+      padding: 15px;
+
+      &--pc {
+        display: block;
+      }
+      &--sp {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      width: 80%;
+      padding: 15px;
+      height: 80%;
+
+      &--pc {
+        display: none;
+      }
+      &--sp {
+        display: block;
+        height: 100%;
+
+        p {
+          height: 100%;
+          overflow-y: scroll;
+        }
+      }
     }
   }
 }

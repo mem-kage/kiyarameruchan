@@ -15,7 +15,6 @@ const Loading: React.VFC<Props> = ({
 }: Props) => {
 
   useEffect(() => {
-    console.log("open loading page");
     setTimeout(() => {
       setIsLoading(!isLoading)
     }, 1500)

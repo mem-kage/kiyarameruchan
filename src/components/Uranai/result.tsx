@@ -4,6 +4,7 @@ import UranaiBtn from "../parts/CommonBtn";
 import UranaiTxtBtn from "../parts/CommonTxtBtn";
 import UranaiTopBtn from "../parts/CommonTopBtn";
 import CommonModalBtn from "../parts/CommonModal";
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 interface Props {
   uranaiFlg: boolean;
@@ -18,47 +19,46 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
     {
       "item": {
         "result": "マジでやばい！！",
-        "resultTxt": "いいことが起こりすぎて周りから嫉妬されるかも...?"
+        "resultTxt": "最近で一番イケてる日める♪ありのままが素敵めるよ！ただ、いいことが起こりすぎて周りから嫉妬されるかも...?"
       }
     },
     {
       "item": {
         "result": "絶好調フィーバー:ピカピカ:",
-        "resultTxt": "いいことが起こりすぎてハッピー"
+        "resultTxt": "仕事も勉強も大きく前進するめる！自信もっていいめる！"
       }
     },
     {
       "item": {
         "result": "絶好調！！",
-        "resultTxt": "今日はいつもよりいい日になるめる！自信持って今日も頑張るめる"
+        "resultTxt": "過去の失敗が役に立つめる！失敗なんてこの世にはないめるよ！"
       }
     },
     {
       "item": {
         "result": "好調",
-        "resultTxt": "何かいいことがあるかも！？"
+        "resultTxt": "周りから力を貸してもらいながら成功に一歩ずつ近づいていってるめる。いつもお疲れ様める。"
       }
     },
     {
       "item": {
         "result": "普通",
-        "resultTxt": "特に何もない平凡な日になるめる"
+        "resultTxt": "肩の力を抜いて自然体でいることが幸運への近道めるよ！"
       }
     },
     {
       "item": {
         "result": "不調",
-        "resultTxt": "なんだか嫌な予感...がするめる。。。甘いものを食べてリフレッシュするめる！"
+        "resultTxt": "周りの意見に振り回されがちかも!?自分の意見も大切にするめる！"
       }
     },
     {
       "item": {
         "result": "絶不調",
-        "resultTxt": "今日は嫌なことがあるめる。周りを注意したほうがいいめる。"
+        "resultTxt": "視線が気になり意気消沈...。たまには一人になって気分転換するのもいいめるよ♪"
       }
     }
   ]
-  console.log(result[0].item.result)
 
   return (
     <Container className="uranai-result-wrapper">
@@ -67,11 +67,14 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
         <p>{result[selectedNumber-1].item.resultTxt}</p>
       </div>
       <ul className="flex-items">
-        <UranaiTopBtn
-          btnTxt={"Topへ"}
-          setIsLoading={setIsLoading}
-          setValue={setValue}
-        />
+        <li>
+          <ArrowLeftIcon fontSize="medium" />
+          <UranaiTopBtn
+            btnTxt={"Topに戻る"}
+            setIsLoading={setIsLoading}
+            setValue={setValue}
+          />
+        </li>
         <UranaiTxtBtn
           status={uranaiFlg}
           setStatus={setUranaiFlg}

@@ -20,8 +20,16 @@ const CommonModalBtn: React.VFC = () => {
       <div className={`modal-wrap ${isOpen ? 'modal--open' : 'modal--close'}`}>
         <div className="modal-bg"></div>
         <div className="modal-item">
-          <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_sp.png`} alt="" /></p>
-          <p className="modal-close-btn" onClick={clickKcBtn}>これは閉じるボタンです</p>
+          {/* <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_sp.png`} alt="" /></p> */}
+          <p className="modal-close-btn" onClick={clickKcBtn}>
+            <img src={`${process.env.PUBLIC_URL}/images/jikosyokai/icon_close.svg`} alt="" />
+          </p>
+          <div className="modal-item--pc">
+            <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_pc.png`} alt=""></img></p>
+          </div>
+          <div className="modal-item--sp">
+            <p><img src={`${process.env.PUBLIC_URL}/images/jikosyokai/kc_jikosyokai_sp.png`} alt=""></img></p>
+          </div>
         </div>
       </div>
     </>
