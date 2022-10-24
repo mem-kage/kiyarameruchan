@@ -2,11 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ShindanTxtBtn from "../parts/CommonTxtBtn";
 import ShindanTopBtn from "../parts/CommonTopBtn";
-import ShindanTxt from "../parts/CommonTxt";
 import CommonModalBtn from "../parts/CommonModal";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import SNSBtn from '../parts/CommonSNS';
-import { Helmet } from 'react-helmet';
 
 interface Props {
   shindanFlg: boolean;
@@ -24,20 +22,9 @@ const ShindanResult: React.VFC<Props> = ({
   const randamNumber = Math.floor(Math.random() * 8);
   const imgUrl = "/images/sindan/result/kc_ps_item_0"+ (randamNumber+1) +".png";
   const titleList = ["哀愁漂う後ろ姿...","寝そべる。","集合写真 でしゃばリポーズ","さぁて 討論しようぜポーズ","韓国式の挙手","お待たせポーズ","覗き見ポーズ","心ここにあらずポーズ"]
-  const imgFileName = "kc_kawaii_0" + (randamNumber+1) + ".png";
 
   return (
     <>
-      {/* <Helmet
-        title={`きやらめるちゃんポーズ結果める！`}
-        meta={[
-            { property: 'og:title', content: titleList[randamNumber] },
-            { property: 'og:type', content: 'website' },
-            { property: 'og:url', content: 'https://mem-kage.github.io/kiyarameruchan/' },
-            { property: 'og:image', content: `${process.env.PUBLIC_URL}${imgUrl}` },
-            { property: 'og:description', content: titleList[randamNumber] },
-        ]}
-      /> */}
       <div className="shindan-result-wrap">
         <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
         <ImgBox>
@@ -66,7 +53,7 @@ const ShindanResult: React.VFC<Props> = ({
         <CommonModalBtn />
         <SNSBtn
           twURL={"https://mem-kage.github.io/kiyarameruchan/"}
-          title={`診断結果が出ためる！！あなたに合うポーズは${titleList[randamNumber]}める！また遊ぶめる〜`}
+          title={`診断結果が出ためる！！あなたに合うポーズは「${titleList[randamNumber]}」める！また遊ぶめる〜`}
         />
       </div>
     </>

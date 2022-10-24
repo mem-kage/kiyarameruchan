@@ -87,7 +87,7 @@ const UranaiResult: React.VFC<Props> = ({uranaiFlg, setUranaiFlg, setIsLoading, 
       <CommonModalBtn />
       <SNSBtn
         twURL={"https://mem-kage.github.io/kiyarameruchan/"}
-        title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+        title={`占い結果は「${result[selectedNumber-1].item.result}」！${result[selectedNumber-1].item.resultTxt}`}
       />
     </Container>
   );
