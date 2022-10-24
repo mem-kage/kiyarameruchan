@@ -66,7 +66,7 @@ const ShindanResult: React.VFC<Props> = ({
         <CommonModalBtn />
         <SNSBtn
           twURL={"https://mem-kage.github.io/kiyarameruchan/"}
-          title={"きやらめるちゃんで遊ぶメル！！占い、ポーズあるめるよ！"}
+          title={`診断結果が出ためる！！あなたに合うポーズは${titleList[randamNumber]}める！また遊ぶめる〜`}
         />
       </div>
     </>
