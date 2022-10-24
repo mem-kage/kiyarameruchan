@@ -12,6 +12,9 @@ interface Props {
 }
 
 const CommonSNS: React.VFC<Props> = ({twURL, title}: Props) => {
+  const sendMsg = title + " きやらめるちゃん：" + twURL;
+  const encodeTitle = encodeURI(title);
+  const sendURL = `https://line.me/R/share?text=${encodeTitle}`;
 
   return(
     <div className="common-sns">
@@ -22,10 +25,10 @@ const CommonSNS: React.VFC<Props> = ({twURL, title}: Props) => {
         <TwitterIcon size={40} round />
       </TwitterShareButton>
 
-      <LineShareButton url={twURL} title={title} >
+      {/* <LineShareButton url={twURL} title={title} >
         <LineIcon size={40} round />
-      </LineShareButton>
-      <a target="_blank" href="https://line.me/R/share?text=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF" rel="noreferrer">ラインで送る</a>
+      </LineShareButton> */}
+      <a target="_blank" href={sendURL} rel="noreferrer">ラインで送る</a>
 
     </div>
   )
