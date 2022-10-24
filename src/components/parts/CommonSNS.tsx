@@ -13,7 +13,7 @@ interface Props {
 
 const CommonSNS: React.VFC<Props> = ({twURL, title}: Props) => {
   const sendMsg = title + " きやらめるちゃん：" + twURL;
-  const encodeTitle = encodeURI(title);
+  const encodeTitle = encodeURI(sendMsg);
   const sendURL = `https://line.me/R/share?text=${encodeTitle}`;
 
   return(
