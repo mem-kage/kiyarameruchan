@@ -28,7 +28,7 @@ const ShindanResult: React.VFC<Props> = ({
 
   return (
     <>
-      <Helmet
+      {/* <Helmet
         title={`きやらめるちゃんポーズ結果める！`}
         meta={[
             { property: 'og:title', content: titleList[randamNumber] },
@@ -37,7 +37,7 @@ const ShindanResult: React.VFC<Props> = ({
             { property: 'og:image', content: `${process.env.PUBLIC_URL}${imgUrl}` },
             { property: 'og:description', content: titleList[randamNumber] },
         ]}
-      />
+      /> */}
       <div className="shindan-result-wrap">
         <h1 className="common-title"><p>{titleList[randamNumber]}</p></h1>
         <ImgBox>
@@ -47,14 +47,14 @@ const ShindanResult: React.VFC<Props> = ({
         </ImgBox>
 
         <ul className="flex-items">
-          <li>
+          <div>
             <ArrowLeftIcon fontSize="medium" />
             <ShindanTopBtn
               btnTxt={"Topに戻る"}
               setIsLoading={setIsLoading}
               setValue={setValue}
             />
-          </li>
+          </div>
           <ShindanTxtBtn
             status={shindanFlg}
             setStatus={setShindanFlg}

@@ -4,6 +4,10 @@
   padding-left: 0;
   justify-content: center;
 
+  > div {
+    position: relative;
+  }
+
   li {
     cursor: pointer;
     color: #D77824;
